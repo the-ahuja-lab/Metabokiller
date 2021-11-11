@@ -1,9 +1,9 @@
 # Metabokiller: Artificial Intelligence uncovers carcinogenic human metabolites
 
 <br/>
-<img src="Images/GH_Cover.png"> <!-- cover image -->
+<img src="Images/GH_Cover.png"> 
 
-How to use Metabokiller?
+How to use Metabokiller?<!-- cover image -->
 
 To get predictions for your data:
 <br/>In your drive, download the models folder.
