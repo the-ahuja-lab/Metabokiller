@@ -1,5 +1,7 @@
 # Metabokiller
 
+<img src="Main_pipeline/Images/Workflow.png">
+
 How to use Metabokiller?
 
 To get predictions for your data:
