@@ -1,8 +1,7 @@
-# Metabokiller: <br/>
-Artificial Intelligence uncovers carcinogenic human metabolites
+# Metabokiller: Artificial Intelligence uncovers carcinogenic human metabolites
 
 <br/>
-<img src="Images/GH_Cover.png">
+<img src="Images/GH_Cover.png"> <!-- cover image -->
 
 How to use Metabokiller?
 
