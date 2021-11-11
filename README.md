@@ -1,8 +1,7 @@
 # Metabokiller
-Metabokiller: Artificial Intelligence uncovers carcinogenic human metabolites
+Metabokiller: Artificial Intelligence uncovers carcinogenic human metabolites<br/>
 
-<br/>
-## Workflow
+## Workflow 
 
 <img src="Images/GH_Cover.png"> 
 
