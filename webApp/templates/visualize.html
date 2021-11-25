@@ -1,0 +1,62 @@
+<style type="text/css">
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+} 
+table {  
+  border-collapse: collapse;  
+  width: 100%;
+  height: 12%;
+  border-spacing: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  vertical-align: center;
+}  
+td { 
+  text-align: center;
+  vertical-align: center;
+  border: 2px solid black; 
+  padding: 15px;  
+} 
+th {
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid black; 
+  padding: 15px;  
+} 
+
+</style> 
+{% extends "layout.html" %}
+
+{% block content %}
+    {% if plots_generated %}
+        <h1> Results Overview</h1>
+        <table>
+        <tr>
+            <th style="text-align:center">SMILE</th>
+            <th style="text-align:center">Carcinogenicity</th>
+            <th style="text-align:center">Probability</th>
+        </tr>
+        <tr>
+            <td>{{table['SMILE']}}</td>
+            <td>{{table['Carcinogenicity']}}</td>
+            <td>{{table['Probability']}}</td>
+        </tr>
+    </table>
+    <br>
+        <div class="plots-container">
+        <div class="barplot-container">
+            <img src="{{ url_for('static', filename='images/barplot.jpg') }}" alt="Bar Plot" class="center">
+
+        </div>
+    <h1>Download Interpretable results</h1>
+    <br>
+    <div class="down-plt">
+            <a href="{{ url_for('download_results') }}"><button class="btn btn-default btn-md">Download Results</button></a>     
+            <a href="{{ url_for('download_plots') }}"><button class="btn btn-default btn-md">Download as PDF</button></a>
+    </div>
+    {% endif %}
+{% endblock %} 
