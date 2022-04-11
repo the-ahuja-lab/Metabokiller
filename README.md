@@ -12,9 +12,9 @@ Metabokiller is a carcinogen-independent ensemble model for carcinogenicity pred
 ## How to use Metabokiller?
 
 
-### Installation using pip 
+### Installation using pip3 
 ```
-pip install MetaboKiller
+pip3 install MetaboKiller
 
 ```
 
