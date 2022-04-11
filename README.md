@@ -16,6 +16,12 @@ To get predictions for your data:<br/>
 - Download the **models** folder.<br/>
 - Run the **MKEnsemble.ipynb** notebook.<br/>
 - The input is a list of canonical SMILES (Openbabel generated) strings.<br/>
+```
+#predictions in dataframe
+Ensemble_mk(['ClCC=C','C=CCOC(=O)CC(C)C']) #predictions in dataframe
+#prtedictions with individual explainability plots
+Ensemble_mk(['ClCC=C','C=CCOC(=O)CC(C)C'],explainability=True) 
+```
 
 ### Using pip package
 - Installation 
