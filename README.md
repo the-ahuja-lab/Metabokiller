@@ -11,9 +11,8 @@ Metabokiller is a carcinogen-independent ensemble model for carcinogenicity pred
 
 ## How to use Metabokiller?
 
-To get predictions for your data:<br/>
 
-### Installation using pip package
+### Installation using pip 
 ```
 pip install MetaboKiller
 
@@ -48,7 +47,7 @@ mk.Proliferation()
 mk.Apoptosis()
 ```
 
-To get predictions for all available carcinogenic properties along with their explainability:
+- To get predictions for all available carcinogenic properties along with their explainability:
 ```
 from MetaboKiller import EnsembleMK
 ```
