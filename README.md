@@ -13,6 +13,6 @@ Metabokiller is a carcinogen-independent ensemble model for carcinogenicity pred
 
 To get predictions for your data:<br/>
 - Download the **models** folder.<br/>
-- Run the **MetaboKiller_ensemble.ipynb** notebook.<br/>
-- The input file should be named as **input.csv**, and should consist of two columns with **name** and **smiles** of the compounds you want prediction for.<br/>
+- Run the **MKEnsemble.ipynb** notebook.<br/>
+- The input is a list of canonical SMILES (Openbabel generated) strings.<br/>
 <!-- comment -->
