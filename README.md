@@ -78,9 +78,7 @@ result,explaination = EnsembleMK.predict(sa,explainability=True)
 # getting output from explainability output object
 from matplotlib.backends.backend_pdf import PdfPages
 from matplotlib import pyplot as plt
-```
 
-```
 pdf = PdfPages("Ensmble-Result.pdf")
 for fig in explaination:
 	fig.savefig(pdf, format='pdf')
