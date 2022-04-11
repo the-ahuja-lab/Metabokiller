@@ -30,20 +30,20 @@ pip install MetaboKiller
 ```
 from MetaboKiller import mk_predictor as mk
 ```
-# prepare a list of canonical SMILES (Openbabel generated) strings
 ```
+# prepare a list of canonical SMILES (Openbabel generated) strings
 smiles = ['ClCC=C', 'C=CCOC(=O)CC(C)C'] 
 ```
-# run predictions on any of the carcinogenic property of interest (e.g. epigenetic modifications)
 ```
+# run predictions on any of the carcinogenic property of interest (e.g. epigenetic modifications)
 mk.Epigenetics(smiles)
 ```
-# save the result as Pandas dataframe
 ```
+# save the result as Pandas dataframe
 result = mk.Epigenetics(smiles)
 ```
-List of carcinogenic properties available in  **mk** 
 ```
+List of carcinogenic properties available in  **mk** 
 mk.Epigenetics()
 mk.Oxidative()
 mk.GInstability()
@@ -60,21 +60,30 @@ from MetaboKiller import EnsembleMK
 # prepare a list of canonical SMILES (Openbabel generated) strings
 smiles = ['ClCC=C', 'C=CCOC(=O)CC(C)C'] 
 ```
+```
 # run predictions for all available carcinogenic properties
 EnsembleMK.predict(smiles)
+```
+```
 # save the result as Pandas dataframe
 result = EnsembleMK.predict(smiles)
+```
+```
 # or get result explainability on individual carcinogenic properties for each SMILES 
 result,explaination = EnsembleMK.predict(sa,explainability=True)
-
-
-# getting output from explainability output object
 ```
+
+
+```
+# getting output from explainability output object
 from matplotlib.backends.backend_pdf import PdfPages
 from matplotlib import pyplot as plt
+```
+
 ```
 pdf = PdfPages("Ensmble-Result.pdf")
 for fig in explaination:
 	fig.savefig(pdf, format='pdf')
 pdf.close()
+```
 <!-- comment -->
