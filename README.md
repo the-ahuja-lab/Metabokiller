@@ -31,26 +31,35 @@ pip install MetaboKiller
 from MetaboKiller import mk_predictor as mk
 ```
 # prepare a list of canonical SMILES (Openbabel generated) strings
+```
 smiles = ['ClCC=C', 'C=CCOC(=O)CC(C)C'] 
+```
 # run predictions on any of the carcinogenic property of interest (e.g. epigenetic modifications)
+```
 mk.Epigenetics(smiles)
+```
 # save the result as Pandas dataframe
+```
 result = mk.Epigenetics(smiles)
-
+```
 List of carcinogenic properties available in  **mk** 
+```
 mk.Epigenetics()
 mk.Oxidative()
 mk.GInstability()
 mk.Electrophile()
 mk.Proliferation()
 mk.Apoptosis()
-
+```
 
 ```
 from MetaboKiller import EnsembleMK
 ```
+
+```
 # prepare a list of canonical SMILES (Openbabel generated) strings
 smiles = ['ClCC=C', 'C=CCOC(=O)CC(C)C'] 
+```
 # run predictions for all available carcinogenic properties
 EnsembleMK.predict(smiles)
 # save the result as Pandas dataframe
