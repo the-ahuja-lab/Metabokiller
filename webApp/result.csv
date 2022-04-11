@@ -1,2 +1,0 @@
-smiles,epigenetic_0,epigenetic_1,epigenetic_preds,oxidative_0,oxidative_1,oxidative_preds,genotoxic_0,genotoxic_1,genotoxic_preds,apoptosis_0,apoptosis_1,apoptosis_preds,proliferations_0,proliferations_1,proliferations_preds,electrophiles_0,electrophiles_1,electrophiles_preds,ensemble_0,ensemble_1,ensemble_preds
-NC1=C(C)C=CC(=C1)N,0.9739862,0.026013754,0,0.22212963,0.7778704,1,1.8862753e-05,0.99998116,1,0.52,0.48,0,0.35431058198049753,0.6456894180195023,1,0.18881512,0.8111849,1,0.37354906411386835,0.6264509358861317,1
