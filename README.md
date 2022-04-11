@@ -11,6 +11,29 @@ Metabokiller is a carcinogen-independent ensemble model for carcinogenicity pred
 
 ## How to use Metabokiller?
 
+### Dependencies
+**Major dependencies**
+1. signaturizer
+2. lime
+
+The installation procedure takes less than 5 minutes.
+```
+pip3 install signaturizer
+pip3 install lime
+```
+
+**Minor dependencies**
+1. os
+2. pandas
+3. numpy
+4. tqdm
+5. joblib
+6. matplotlib
+7. io 
+8. importlib
+
+The only strong dependency for this resource is **RDKit** which can be installed in a local conda environment.
+
 
 ### Installation using pip3 
 ```
