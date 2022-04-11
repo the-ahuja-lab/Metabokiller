@@ -12,12 +12,12 @@ Metabokiller is a carcinogen-independent ensemble model for carcinogenicity pred
 ## How to use Metabokiller?
 
 To get predictions for your data:<br/>
-Using jupyter notebook
+### Using jupyter notebook
 - Download the **models** folder.<br/>
 - Run the **MKEnsemble.ipynb** notebook.<br/>
 - The input is a list of canonical SMILES (Openbabel generated) strings.<br/>
 
-#Using pip package
+### Using pip package
 - Installation 
 
 ```
@@ -27,23 +27,25 @@ pip install MetaboKiller
 
 - Example
 
+To get predictions for individual carcinogenic properties:<br/>
 ```
 from MetaboKiller import mk_predictor as mk
 ```
+Prepare a list of canonical SMILES (Openbabel generated) strings
 ```
-# prepare a list of canonical SMILES (Openbabel generated) strings
 smiles = ['ClCC=C', 'C=CCOC(=O)CC(C)C'] 
 ```
+Run predictions on any of the carcinogenic property of interest (e.g. epigenetic modifications)
 ```
-# run predictions on any of the carcinogenic property of interest (e.g. epigenetic modifications)
 mk.Epigenetics(smiles)
 ```
+Save the result as Pandas dataframe
 ```
-# save the result as Pandas dataframe
 result = mk.Epigenetics(smiles)
 ```
+
+- List of carcinogenic properties available in  **mk** 
 ```
-List of carcinogenic properties available in  **mk** 
 mk.Epigenetics()
 mk.Oxidative()
 mk.GInstability()
@@ -52,30 +54,31 @@ mk.Proliferation()
 mk.Apoptosis()
 ```
 
+To get predictions for all available carcinogenic properties along with their explainability:
 ```
 from MetaboKiller import EnsembleMK
 ```
 
+Prepare a list of canonical SMILES (Openbabel generated) strings
 ```
-# prepare a list of canonical SMILES (Openbabel generated) strings
 smiles = ['ClCC=C', 'C=CCOC(=O)CC(C)C'] 
 ```
+Run predictions for all available carcinogenic properties
 ```
-# run predictions for all available carcinogenic properties
 EnsembleMK.predict(smiles)
 ```
+Save the result as Pandas dataframe
 ```
-# save the result as Pandas dataframe
 result = EnsembleMK.predict(smiles)
 ```
+To get explainability of the results on basis individual carcinogenic properties for each SMILES 
 ```
-# or get result explainability on individual carcinogenic properties for each SMILES 
 result,explaination = EnsembleMK.predict(sa,explainability=True)
 ```
 
 
 ```
-# getting output from explainability output object
+# getting output from the explainability object
 from matplotlib.backends.backend_pdf import PdfPages
 from matplotlib import pyplot as plt
 
