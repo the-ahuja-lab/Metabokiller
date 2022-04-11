@@ -64,7 +64,7 @@ Save the result as Pandas dataframe
 ```
 result = EnsembleMK.predict(smiles)
 ```
-To get explainability of the results on basis individual carcinogenic properties for each SMILES 
+To get explainability of the results on the basis of individual carcinogenic properties (for each SMILES)
 ```
 result,explaination = EnsembleMK.predict(sa,explainability=True)
 ```
