@@ -1,106 +1,134 @@
-# Metabokiller
-Metabokiller: Artificial Intelligence uncovers carcinogenic human metabolites<br/><br/>
-
-## Workflow 
-
-<img src="Images/GH_Cover.png"> 
-
+# Carcinogenicity Prediction using Metabokiller
 ## Introduction
 
-Metabokiller is a carcinogen-independent ensemble model for carcinogenicity prediction. It is a novel ensemble classifier that accurately recognizes carcinogens by quantitatively assessing their chemical composition as well as potential to induce proliferation, oxidative stress, genotoxicity, alterations in epigenetic signatures, and activation of anti-apoptotic pathways.<br/><br/>
+Metabokiller offers a novel, machine learning-based approach that accurately recognizes carcinogens by quantitatively assessing their chemical composition as well as potential to induce proliferation, oxidative stress, genomic instability, alterations in epigenetic signatures, and activation of anti-apoptotic pathways, and therefore, obviates the absolute need for bonafide (non)carcinogens for training model. Concomitant with the carcinogenicity prediction, it also reveals the contribution of the aforementioned biochemical processes in carcinogenicity, thereby making the proposed approach highly interpretable. <br/><br/>
 
-## How to use Metabokiller?
 
-### Dependencies
+The only strong dependency for this resource is [**RDKit**](https://www.rdkit.org/) which can be installed in a local [Conda](https://conda.io/) environment.
+
+```
+$ conda create -c conda-forge -n my-rdkit-env rdkit
+$ conda activate my-rdkit-env
+```
+
 **Major dependencies**
-1. signaturizer
-2. lime
+1. [Signaturizer](https://gitlabsbnb.irbbarcelona.org/packages/signaturizer)
+2. [LIME](https://github.com/marcotcr/lime)
 
 The installation procedure takes less than 5 minutes.
 ```
-pip3 install signaturizer
-pip3 install lime
+$ pip install signaturizer
+$ pip install lime
 ```
 
 **Minor dependencies**
 1. os
-2. pandas
-3. numpy
-4. tqdm
-5. joblib
-6. matplotlib
+2. [pandas](https://pandas.pydata.org/)
+3. [numpy](https://numpy.org)
+4. [tqdm](https://tqdm.github.io)
+5. [joblib](https://pypi.org/project/joblib/)
+6. [matplotlib](https://pypi.org/project/matplotlib/)
 7. io 
-8. importlib
-
-The only strong dependency for this resource is **RDKit** which can be installed in a local conda environment.
+8. [importlib](https://pypi.org/project/importlib/)
 
 
-### Installation using pip3 
+## How to use Metabokiller?
+
+
+### Installation using pip 
 ```
-pip3 install MetaboKiller
-
+$ pip install MetaboKiller
 ```
 
-- Example
+Metabokiller supported carcinogen-specific biochemical properties:
+
+1. Epigenetic Alterations 
+```
+>>> mk.Epigenetics()
+```
+
+2. Oxidative stress 
+```
+>>> mk.Oxidative()
+```
+
+3. Electrophilic Property 
+```
+>>> mk.Electrophile()
+```
+
+4. Genomic Instability 
+```
+>>> mk.GInstability()
+```
+
+5. Pro-proliferative response 
+```
+>>> mk.Proliferation()
+```
+
+6. Anti-apoptotic response 
+```
+>>> mk.Apoptosis()
+```
+
+#### Examples
 
 To get predictions for individual carcinogenic properties:<br/>
 ```
-from MetaboKiller import mk_predictor as mk
+>>> from MetaboKiller import mk_predictor as mk
 ```
 Prepare a list of canonical SMILES (Openbabel generated) strings
 ```
-smiles = ['ClCC=C', 'C=CCOC(=O)CC(C)C'] 
+>>> smiles = ['ClCC=C', 'C=CCOC(=O)CC(C)C'] 
 ```
 Run predictions on any of the carcinogenic property of interest (e.g. epigenetic modifications)
 ```
-mk.Epigenetics(smiles)
+>>> mk.Epigenetics(smiles)
 ```
 Save the result as Pandas dataframe
 ```
 result = mk.Epigenetics(smiles)
 ```
 
-- List of carcinogenic properties available in  **mk** 
-```
-mk.Epigenetics()
-mk.Oxidative()
-mk.GInstability()
-mk.Electrophile()
-mk.Proliferation()
-mk.Apoptosis()
-```
 
-- To get predictions for all available carcinogenic properties along with their explainability:
+##### To get predictions for all available carcinogenic properties along with their explainability:
 ```
-from MetaboKiller import EnsembleMK
+>>> from MetaboKiller import EnsembleMK
 ```
 
 Prepare a list of canonical SMILES (Openbabel generated) strings
 ```
-smiles = ['ClCC=C', 'C=CCOC(=O)CC(C)C'] 
+>>> smiles = ['ClCC=C', 'C=CCOC(=O)CC(C)C'] 
 ```
 Run predictions for all available carcinogenic properties
 ```
-EnsembleMK.predict(smiles)
+>>> EnsembleMK.predict(smiles)
 ```
 Save the result as Pandas dataframe
 ```
-result = EnsembleMK.predict(smiles)
+>>> result = EnsembleMK.predict(smiles)
 ```
-To get explainability of the results on the basis of individual carcinogenic properties (for each SMILES)
+
+##### LIME
+	The biochemical property-focused Metabokiller, by the virtue of its construction, offers interpretability by implementing  Local interpretable model-agnostic explanations (LIME). An algorithm that provides interpretability w.r.t. carcinogen-specific biochemical properties for each SMILE provided.
+
+
+##### To activate interpretability using LIME:
+
 ```
-result,explaination = EnsembleMK.predict(sa,explainability=True)
+>>> result,explaination = EnsembleMK.predict(['ClCC=C', 'C=CCOC(=O)CC(C)C'],explainability=True)
 ```
 
 
 ```
 # getting output from the explainability object
-from matplotlib.backends.backend_pdf import PdfPages
-from matplotlib import pyplot as plt
+>>> from matplotlib.backends.backend_pdf import PdfPages
+>>> from matplotlib import pyplot as plt
 
-pdf = PdfPages("Ensmble-Result.pdf")
-for fig in explaination:
-	fig.savefig(pdf, format='pdf')
-pdf.close()
+>>> pdf = PdfPages("Ensmble-Result.pdf")
+>>> for fig in explaination:
+...	fig.savefig(pdf, format='pdf')
+>>> pdf.close()
 ```
 <!-- comment -->
