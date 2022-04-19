@@ -23,13 +23,14 @@ $ pip install lime
 
 **Minor dependencies**
 1. os
-2. [pandas](https://pandas.pydata.org/)
-3. [numpy](https://numpy.org)
-4. [tqdm](https://tqdm.github.io)
-5. [joblib](https://pypi.org/project/joblib/)
-6. [matplotlib](https://pypi.org/project/matplotlib/)
-7. io 
-8. [importlib](https://pypi.org/project/importlib/)
+2. [scikit-learn v1.0.2](https://scikit-learn.org/stable/whats_new/v1.0.html)
+3. [pandas](https://pandas.pydata.org/)
+4. [numpy](https://numpy.org)
+5. [tqdm](https://tqdm.github.io)
+6. [joblib](https://pypi.org/project/joblib/)
+7. [matplotlib](https://pypi.org/project/matplotlib/)
+8. io 
+9. [importlib](https://pypi.org/project/importlib/)
 
 
 ## How to use Metabokiller?
@@ -37,10 +38,29 @@ $ pip install lime
 
 ### Installation using pip 
 ```
-$ pip install MetaboKiller
+$ pip install Metabokiller
 ```
 
-Metabokiller supported carcinogen-specific biochemical properties:
+#### Examples
+
+To get predictions for individual carcinogenic properties:<br/>
+```
+>>> from Metabokiller import mk_predictor as mk
+```
+Prepare a list of canonical SMILES (Openbabel generated) strings
+```
+>>> smiles = ['ClCC=C', 'C=CCOC(=O)CC(C)C'] 
+```
+Run predictions on any of the carcinogenic property of interest (e.g. epigenetic modifications)
+```
+>>> mk.Epigenetics(smiles)
+```
+Save the result as Pandas dataframe
+```
+result = mk.Epigenetics(smiles)
+```
+
+##### Metabokiller supported carcinogen-specific biochemical properties:
 
 1. Epigenetic Alterations 
 ```
@@ -72,29 +92,10 @@ Metabokiller supported carcinogen-specific biochemical properties:
 >>> mk.Apoptosis()
 ```
 
-#### Examples
-
-To get predictions for individual carcinogenic properties:<br/>
-```
->>> from MetaboKiller import mk_predictor as mk
-```
-Prepare a list of canonical SMILES (Openbabel generated) strings
-```
->>> smiles = ['ClCC=C', 'C=CCOC(=O)CC(C)C'] 
-```
-Run predictions on any of the carcinogenic property of interest (e.g. epigenetic modifications)
-```
->>> mk.Epigenetics(smiles)
-```
-Save the result as Pandas dataframe
-```
-result = mk.Epigenetics(smiles)
-```
-
 
 ##### To get predictions for all available carcinogenic properties along with their explainability:
 ```
->>> from MetaboKiller import EnsembleMK
+>>> from Metabokiller import EnsembleMK
 ```
 
 Prepare a list of canonical SMILES (Openbabel generated) strings
