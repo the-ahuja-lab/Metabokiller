@@ -1,4 +1,6 @@
 # Carcinogenicity Prediction using Metabokiller
+<img src="images/MK.png">
+
 ## Introduction
 
 Metabokiller offers a novel, machine learning-based approach that accurately recognizes carcinogens by quantitatively assessing their chemical composition as well as potential to induce proliferation, oxidative stress, genomic instability, alterations in epigenetic signatures, and activation of anti-apoptotic pathways, and therefore, obviates the absolute need for bonafide (non)carcinogens for training model. Concomitant with the carcinogenicity prediction, it also reveals the contribution of the aforementioned biochemical processes in carcinogenicity, thereby making the proposed approach highly interpretable. <br/><br/>
