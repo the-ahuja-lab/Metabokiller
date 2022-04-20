@@ -123,7 +123,7 @@ Save the result as Pandas dataframe
 ##### To activate interpretability using LIME:
 
 ```
->>> result,explaination = EnsembleMK.predict(['ClCC=C', 'C=CCOC(=O)CC(C)C'],explainability=True)
+>>> result,explanation = EnsembleMK.predict(['ClCC=C', 'C=CCOC(=O)CC(C)C'],explainability=True)
 ```
 
 
