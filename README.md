@@ -1,5 +1,8 @@
 # Carcinogenicity Prediction using Metabokiller
-<img src="Images/MK.png">
+ <br>
+<div align="center">
+<img src="Images/MK.png" width="600" height="200"></div>
+<br>
 
 ## Introduction
 
