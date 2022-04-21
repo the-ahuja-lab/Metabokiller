@@ -133,7 +133,7 @@ Save the result as Pandas dataframe
 >>> from matplotlib import pyplot as plt
 
 >>> pdf = PdfPages("Ensmble-Result.pdf")
->>> for fig in explaination:
+>>> for fig in explanation:
 ...	fig.savefig(pdf, format='pdf')
 >>> pdf.close()
 ```
