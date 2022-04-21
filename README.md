@@ -117,7 +117,7 @@ Save the result as Pandas dataframe
 ```
 
 ##### LIME
-	The biochemical property-focused Metabokiller, by the virtue of its construction, offers interpretability by implementing  Local interpretable model-agnostic explanations (LIME). An algorithm that provides interpretability w.r.t. carcinogen-specific biochemical properties for each SMILE provided.
+	The biochemical property-focused Metabokiller, by the virtue of its construction, offers interpretability by implementing Local Interpretable Model-agnostic Explanations (LIME). An algorithm that provides interpretability with respect to carcinogen-specific biochemical properties for each SMILES provided.
 
 
 ##### To activate interpretability using LIME:
