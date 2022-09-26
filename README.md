@@ -17,7 +17,7 @@ $ conda activate my-rdkit-env
 ```
 
 **Major dependencies**
-1. [Signaturizer](https://gitlabsbnb.irbbarcelona.org/packages/signaturizer)
+1. [Signaturizer(v1.1.11)](https://gitlabsbnb.irbbarcelona.org/packages/signaturizer)
 2. [LIME](https://github.com/marcotcr/lime)
 
 The installation procedure takes less than 5 minutes.
