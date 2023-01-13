@@ -4,7 +4,7 @@
 <img src="Images/Asset 1.png"></div>
 <br>
 
-## Introduction
+### Introduction
 
 Metabokiller offers a novel, machine learning-based approach that accurately recognizes carcinogens by quantitatively assessing their chemical composition as well as potential to induce proliferation, oxidative stress, genomic instability, alterations in epigenetic signatures, and activation of anti-apoptotic pathways, and therefore, obviates the absolute need for bonafide (non)carcinogens for training model. Concomitant with the carcinogenicity prediction, it also reveals the contribution of the aforementioned biochemical processes in carcinogenicity, thereby making the proposed approach highly interpretable. <br/><br/>
 
@@ -15,6 +15,11 @@ The only strong dependency for this resource is [**RDKit**](https://www.rdkit.or
 $ conda create -c conda-forge -n my-rdkit-env rdkit
 $ conda activate my-rdkit-env
 ```
+
+## License Key
+
+**Metabokiller is free for academic institutions, however, for commercial utilization a commercial license key is required. Users (academic/commercial) may apply for a valid "License Key" [here](https://forms.gle/A7jWRHwePzw83Y6D6).**
+
 
 **Major dependencies**
 1. [Signaturizer(v1.1.11)](https://gitlabsbnb.irbbarcelona.org/packages/signaturizer)
@@ -45,6 +50,17 @@ $ pip install lime
 ```
 $ pip install Metabokiller
 ```
+
+### License activation (One time)
+```
+>>> from Metabokiller import mk_predictor as mk
+```
+Activate metabokiller license
+```
+>>> mk.license('license key') #Example: mk.license('KKKVFZ41111WF6RTQ')
+```
+To apply for the license [click here](https://forms.gle/A7jWRHwePzw83Y6D6)
+
 
 #### Examples
 
