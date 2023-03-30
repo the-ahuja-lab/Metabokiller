@@ -20,6 +20,7 @@ $ conda activate my-rdkit-env
 
 **Metabokiller is free for academic institutions, however, for commercial utilization a commercial license key is required. Users (academic/commercial) may apply for a valid "License Key" [here](https://forms.gle/A7jWRHwePzw83Y6D6).**
 
+You can also generate your own predictions using Metabokiller’s [Colab notebook](https://colab.research.google.com/drive/1X2237YQdliDB40GuhR5zFgBuZfszCBav?usp=sharing)
 
 **Major dependencies**
 1. [Signaturizer(v1.1.11)](https://gitlabsbnb.irbbarcelona.org/packages/signaturizer)
